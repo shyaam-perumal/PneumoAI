@@ -129,7 +129,27 @@ The dataset is intended for research and educational purposes, not clinical use.
 - The existing model file at `model/pneumonia_classifier (1).keras`
 - A Supabase project for frontend authentication and profiles
 
+
+## Configure backend
+
+Before starting the backend, create its local environment configuration file.
+
+From the project root in PowerShell, run:
+
+```powershell
+Copy-Item backend/.env.example backend/.env
+```
+
+This copies the example preprocessing settings into the backend's local configuration. The supplied values are suitable for the documented preprocessing pipeline; no private credentials are required for backend inference.
+
+The `backend/.env` file is intentionally excluded from GitHub. Do not upload private environment files.
+
 ## Configure Supabase
+
+Supabase is optional for guest users who only want to test the chest X-ray upload and prediction workflow. The frontend and backend can run without Supabase credentials for this purpose.
+
+Supabase configuration is required for signup, login, persistent user sessions, password recovery, and account/profile management. To enable these features, configure your own Supabase project using the migration in `supabase/migrations/` and the environment variables described below.
+
 
 Create `frontend/.env.local` with the Supabase project URL and publishable key, using the variable names `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
 
@@ -156,6 +176,10 @@ python -m uvicorn app.main:app --app-dir backend --reload --host 127.0.0.1 --por
 ```
 
 **Terminal 2 — Frontend**
+
+
+**Prerequisite:** Install Node.js 20.19+ or 22.12+ before running the frontend. Verify your installation with `node --version`.
+
 
 ```powershell
 cd frontend
