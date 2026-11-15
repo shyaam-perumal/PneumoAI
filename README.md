@@ -123,11 +123,11 @@ The dataset is intended for research and educational purposes, not clinical use.
 
 ## Requirements
 
-- Windows with PowerShell
-- Node.js and npm
-- Python 3.11 or 3.12
-- The existing model file at `model/pneumonia_classifier (1).keras`
-- A Supabase project for frontend authentication and profiles
+- Windows, macOS, or Linux (the setup commands in this README are written for Windows PowerShell; macOS and Linux users may need equivalent commands).
+- Node.js 20.19+ or 22.12+ and npm.
+- Python 3.11 or 3.12.
+- The existing model file at `model/pneumonia_classifier (1).keras`.
+- A Supabase project (optional; required only for authentication, persistent sessions, and account/profile features).
 
 
 ## Configure backend
